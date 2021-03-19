@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "willsmod:block/tutorial_slab" },
+        "type=top": { "model": "willsmod:block/tutorial_slab_top" },
+        "type=double": { "model": "willsmod:block/tutorial_block" }
+    }
+}
