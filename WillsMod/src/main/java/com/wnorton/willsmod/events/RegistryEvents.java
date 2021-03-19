@@ -10,6 +10,7 @@ import com.wnorton.willsmod.objects.blocks.CustomStairsBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.WallBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -30,7 +31,8 @@ public class RegistryEvents {
 				ItemList.tutorial_item = new Item(new Item.Properties().group(ItemGroup.MISC)).setRegistryName(location("tutorial_item")),
 				ItemList.tutorial_block = new BlockItem(BlockList.tutorial_block, new Item.Properties().group(ItemGroup.MISC)).setRegistryName(BlockList.tutorial_block.getRegistryName()), 
 				ItemList.tutorial_slab = new BlockItem(BlockList.tutorial_slab, new Item.Properties().group(ItemGroup.MISC)).setRegistryName(BlockList.tutorial_slab.getRegistryName()), 
-				ItemList.tutorial_stair = new BlockItem(BlockList.tutorial_stair, new Item.Properties().group(ItemGroup.MISC)).setRegistryName(BlockList.tutorial_stair.getRegistryName())
+				ItemList.tutorial_stair = new BlockItem(BlockList.tutorial_stair, new Item.Properties().group(ItemGroup.MISC)).setRegistryName(BlockList.tutorial_stair.getRegistryName()),
+				ItemList.tutorial_wall = new BlockItem(BlockList.tutorial_wall, new Item.Properties().group(ItemGroup.MISC)).setRegistryName(BlockList.tutorial_wall.getRegistryName())
 		);
 	}
 	
@@ -39,7 +41,8 @@ public class RegistryEvents {
 		event.getRegistry().registerAll(
 				BlockList.tutorial_block = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(2, 6)).setRegistryName(location("tutorial_block")), 
 				BlockList.tutorial_slab = new SlabBlock(Block.Properties.from(BlockList.tutorial_block)).setRegistryName(location("tutorial_slab")),
-				BlockList.tutorial_stair = new CustomStairsBlock(BlockList.tutorial_block.getDefaultState(), Block.Properties.from(BlockList.tutorial_block)).setRegistryName(location("tutorial_stairs"))
+				BlockList.tutorial_stair = new CustomStairsBlock(BlockList.tutorial_block.getDefaultState(), Block.Properties.from(BlockList.tutorial_block)).setRegistryName(location("tutorial_stairs")),
+				BlockList.tutorial_wall = new WallBlock(Block.Properties.from(BlockList.tutorial_block)).setRegistryName(location("tutorial_wall"))
 		);
 	}
 	
