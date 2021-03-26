@@ -3,5 +3,7 @@
 	"block.willsmod.tutorial_block": "Special Block",
 	"block.willsmod.tutorial_slab": "Special Slab",
 	"block.willsmod.tutorial_stairs": "Special Stairs",
-	"block.willsmod.tutorial_wall": "Special Wall"
+	"block.willsmod.tutorial_wall": "Special Wall",
+	"block.willsmod.oil" : "Oil",
+	"item.willsmod.oil_bucket" : "Oil Bucket"
 }
