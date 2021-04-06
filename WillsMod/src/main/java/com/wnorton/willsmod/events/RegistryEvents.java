@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import com.wnorton.willsmod.Main;
 import com.wnorton.willsmod.lists.BlockList;
 import com.wnorton.willsmod.lists.FluidList;
+import com.wnorton.willsmod.lists.FoodList;
 import com.wnorton.willsmod.lists.ItemList;
 import com.wnorton.willsmod.objects.blocks.CustomStairsBlock;
 import com.wnorton.willsmod.objects.fluids.FluidOil;
@@ -40,7 +41,8 @@ public class RegistryEvents {
 				ItemList.tutorial_slab = new BlockItem(BlockList.tutorial_slab, new Item.Properties().group(ItemGroup.MISC)).setRegistryName(BlockList.tutorial_slab.getRegistryName()), 
 				ItemList.tutorial_stair = new BlockItem(BlockList.tutorial_stair, new Item.Properties().group(ItemGroup.MISC)).setRegistryName(BlockList.tutorial_stair.getRegistryName()),
 				ItemList.tutorial_wall = new BlockItem(BlockList.tutorial_wall, new Item.Properties().group(ItemGroup.MISC)).setRegistryName(BlockList.tutorial_wall.getRegistryName()),
-				ItemList.oil_bucket = new BucketItem(() -> FluidList.oil, new Item.Properties().group(ItemGroup.MISC).maxStackSize(1)).setRegistryName(location("oil_bucket"))
+				ItemList.oil_bucket = new BucketItem(() -> FluidList.oil, new Item.Properties().group(ItemGroup.MISC).maxStackSize(1)).setRegistryName(location("oil_bucket")),
+				ItemList.pepper = new Item(new Item.Properties().group(ItemGroup.MISC).food(FoodList.PEPPER)).setRegistryName(location("pepper"))
 		);
 	}
 	
