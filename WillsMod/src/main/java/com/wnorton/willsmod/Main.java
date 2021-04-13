@@ -3,6 +3,10 @@ package com.wnorton.willsmod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.wnorton.willsmod.lists.BlockList;
+
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -27,7 +31,7 @@ public class Main {
 	}
 	
 	private void ClientSetup(final FMLClientSetupEvent event) {
-		
+		RenderTypeLookup.setRenderLayer(BlockList.pepper_crop, RenderType.getCutout());
 	}
 	
 	public void OnServerStarting(FMLServerStartingEvent event) {
