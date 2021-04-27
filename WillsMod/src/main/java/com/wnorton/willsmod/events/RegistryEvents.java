@@ -8,6 +8,7 @@ import com.wnorton.willsmod.lists.FluidList;
 import com.wnorton.willsmod.lists.FoodList;
 import com.wnorton.willsmod.lists.ItemList;
 import com.wnorton.willsmod.objects.blocks.CustomStairsBlock;
+import com.wnorton.willsmod.objects.blocks.IceBerryBush;
 import com.wnorton.willsmod.objects.blocks.PepperCropBlock;
 import com.wnorton.willsmod.objects.fluids.FluidOil;
 import com.wnorton.willsmod.objects.fluids.FluidOil.Flowing;
@@ -43,7 +44,8 @@ public class RegistryEvents {
 				ItemList.tutorial_stair = new BlockItem(BlockList.tutorial_stair, new Item.Properties().group(ItemGroup.MISC)).setRegistryName(BlockList.tutorial_stair.getRegistryName()),
 				ItemList.tutorial_wall = new BlockItem(BlockList.tutorial_wall, new Item.Properties().group(ItemGroup.MISC)).setRegistryName(BlockList.tutorial_wall.getRegistryName()),
 				ItemList.oil_bucket = new BucketItem(() -> FluidList.oil, new Item.Properties().group(ItemGroup.MISC).maxStackSize(1)).setRegistryName(location("oil_bucket")),
-				ItemList.pepper = new BlockItem(BlockList.pepper_crop, new Item.Properties().group(ItemGroup.MISC).food(FoodList.PEPPER)).setRegistryName(location("pepper"))
+				ItemList.pepper = new BlockItem(BlockList.pepper_crop, new Item.Properties().group(ItemGroup.MISC).food(FoodList.PEPPER)).setRegistryName(location("pepper")),
+				ItemList.ice_berry = new BlockItem(BlockList.ice_berry_bush, new Item.Properties().group(ItemGroup.MISC).food(FoodList.ICE_BERRY)).setRegistryName(BlockList.ice_berry_bush.getRegistryName())
 		);
 	}
 	
@@ -55,7 +57,8 @@ public class RegistryEvents {
 				BlockList.tutorial_stair = new CustomStairsBlock(BlockList.tutorial_block.getDefaultState(), Block.Properties.from(BlockList.tutorial_block)).setRegistryName(location("tutorial_stairs")),
 				BlockList.tutorial_wall = new WallBlock(Block.Properties.from(BlockList.tutorial_block)).setRegistryName(location("tutorial_wall")),
 				BlockList.oil = new FlowingFluidBlock(() -> FluidList.oil, Block.Properties.create(Material.WATER).doesNotBlockMovement().noDrops()).setRegistryName(location("oil")),
-				BlockList.pepper_crop = new PepperCropBlock(Block.Properties.create(Material.PLANTS).hardnessAndResistance(0f).doesNotBlockMovement().tickRandomly().sound(SoundType.PLANT)).setRegistryName("pepper_crop")
+				BlockList.pepper_crop = new PepperCropBlock(Block.Properties.create(Material.PLANTS).hardnessAndResistance(0f).doesNotBlockMovement().tickRandomly().sound(SoundType.PLANT)).setRegistryName("pepper_crop"),
+				BlockList.ice_berry_bush = new IceBerryBush(Block.Properties.create(Material.PLANTS).hardnessAndResistance(0).doesNotBlockMovement().tickRandomly().sound(SoundType.PLANT)).setRegistryName(location("ice_berry_bush"))
 		);
 	}
 	

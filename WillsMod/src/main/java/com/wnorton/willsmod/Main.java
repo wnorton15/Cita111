@@ -32,6 +32,7 @@ public class Main {
 	
 	private void ClientSetup(final FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(BlockList.pepper_crop, RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockList.ice_berry_bush, RenderType.getCutout());
 	}
 	
 	public void OnServerStarting(FMLServerStartingEvent event) {

@@ -7,5 +7,7 @@
 	"block.willsmod.oil" : "Oil",
 	"item.willsmod.oil_bucket" : "Oil Bucket",
 	"block.willsmod.pepper": "Pepper",
-	"item.willsmod.pepper": "Pepper"
+	"item.willsmod.pepper": "Pepper",
+	"block.willsmod.ice_berry_bush": "Ice Berry",
+	"item.willsmod.ice_berry": "Ice Berry"
 }
