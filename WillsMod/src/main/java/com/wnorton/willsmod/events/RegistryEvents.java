@@ -34,18 +34,19 @@ import net.minecraftforge.fml.common.Mod;
 public class RegistryEvents {
 	public static final Logger LOGGER = Main.LOGGER;
 	public static final String MOD_ID = Main.MOD_ID;
+	public static final ItemGroup TUTORIAL_GROUP = Main.TUTORIAL_TAB;
 	
 	@SubscribeEvent
 	public static void registerItems(final RegistryEvent.Register<Item> event) {
 		event.getRegistry().registerAll(
-				ItemList.tutorial_item = new Item(new Item.Properties().group(ItemGroup.MISC)).setRegistryName(location("tutorial_item")),
-				ItemList.tutorial_block = new BlockItem(BlockList.tutorial_block, new Item.Properties().group(ItemGroup.MISC)).setRegistryName(BlockList.tutorial_block.getRegistryName()), 
-				ItemList.tutorial_slab = new BlockItem(BlockList.tutorial_slab, new Item.Properties().group(ItemGroup.MISC)).setRegistryName(BlockList.tutorial_slab.getRegistryName()), 
-				ItemList.tutorial_stair = new BlockItem(BlockList.tutorial_stair, new Item.Properties().group(ItemGroup.MISC)).setRegistryName(BlockList.tutorial_stair.getRegistryName()),
-				ItemList.tutorial_wall = new BlockItem(BlockList.tutorial_wall, new Item.Properties().group(ItemGroup.MISC)).setRegistryName(BlockList.tutorial_wall.getRegistryName()),
-				ItemList.oil_bucket = new BucketItem(() -> FluidList.oil, new Item.Properties().group(ItemGroup.MISC).maxStackSize(1)).setRegistryName(location("oil_bucket")),
-				ItemList.pepper = new BlockItem(BlockList.pepper_crop, new Item.Properties().group(ItemGroup.MISC).food(FoodList.PEPPER)).setRegistryName(location("pepper")),
-				ItemList.ice_berry = new BlockItem(BlockList.ice_berry_bush, new Item.Properties().group(ItemGroup.MISC).food(FoodList.ICE_BERRY)).setRegistryName(BlockList.ice_berry_bush.getRegistryName())
+				ItemList.tutorial_item = new Item(new Item.Properties().group(TUTORIAL_GROUP)).setRegistryName(location("tutorial_item")),
+				ItemList.tutorial_block = new BlockItem(BlockList.tutorial_block, new Item.Properties().group(TUTORIAL_GROUP)).setRegistryName(BlockList.tutorial_block.getRegistryName()), 
+				ItemList.tutorial_slab = new BlockItem(BlockList.tutorial_slab, new Item.Properties().group(TUTORIAL_GROUP)).setRegistryName(BlockList.tutorial_slab.getRegistryName()), 
+				ItemList.tutorial_stair = new BlockItem(BlockList.tutorial_stair, new Item.Properties().group(TUTORIAL_GROUP)).setRegistryName(BlockList.tutorial_stair.getRegistryName()),
+				ItemList.tutorial_wall = new BlockItem(BlockList.tutorial_wall, new Item.Properties().group(TUTORIAL_GROUP)).setRegistryName(BlockList.tutorial_wall.getRegistryName()),
+				ItemList.oil_bucket = new BucketItem(() -> FluidList.oil, new Item.Properties().group(TUTORIAL_GROUP).maxStackSize(1)).setRegistryName(location("oil_bucket")),
+				ItemList.pepper = new BlockItem(BlockList.pepper_crop, new Item.Properties().group(TUTORIAL_GROUP).food(FoodList.PEPPER)).setRegistryName(location("pepper")),
+				ItemList.ice_berry = new BlockItem(BlockList.ice_berry_bush, new Item.Properties().group(TUTORIAL_GROUP).food(FoodList.ICE_BERRY)).setRegistryName(BlockList.ice_berry_bush.getRegistryName())
 		);
 	}
 	
