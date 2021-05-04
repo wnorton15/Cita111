@@ -7,6 +7,7 @@ import com.wnorton.willsmod.lists.BlockList;
 import com.wnorton.willsmod.lists.FluidList;
 import com.wnorton.willsmod.lists.FoodList;
 import com.wnorton.willsmod.lists.ItemList;
+import com.wnorton.willsmod.lists.PotionList;
 import com.wnorton.willsmod.objects.blocks.CustomStairsBlock;
 import com.wnorton.willsmod.objects.blocks.IceBerryBush;
 import com.wnorton.willsmod.objects.blocks.PepperCropBlock;
@@ -20,11 +21,17 @@ import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.WallBlock;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.potion.Effect;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.EffectType;
+import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -68,6 +75,20 @@ public class RegistryEvents {
 		event.getRegistry().registerAll(
 				FluidList.flowing_oil = (Flowing) new FluidOil.Flowing().setRegistryName(location("flowing_oil")),
 				FluidList.oil = (Source) new FluidOil.Source().setRegistryName(location("oil"))
+		);
+	}
+	
+	@SubscribeEvent
+	public static void registerPotions(final RegistryEvent.Register<Potion> event) {
+		event.getRegistry().registerAll(
+			PotionList.more_health_potion = new Potion(new EffectInstance(PotionList.more_health_effect, 3600)).setRegistryName(location("more_health"))
+		);
+	}
+	
+	@SubscribeEvent
+	public static void registerEffects(final RegistryEvent.Register<Effect> event) {
+		event.getRegistry().registerAll(
+			PotionList.more_health_effect = new PotionList.MoreHealthEffect(EffectType.BENEFICIAL, 0xf7ec19).addAttributesModifier(SharedMonsterAttributes.MAX_HEALTH, "123ADE48-3DBA-7392-1583-908C731B2630" , (double)1, AttributeModifier.Operation.MULTIPLY_TOTAL).setRegistryName(location("more_health"))
 		);
 	}
 	

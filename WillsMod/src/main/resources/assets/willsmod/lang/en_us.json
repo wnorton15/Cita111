@@ -10,5 +10,10 @@
 	"item.willsmod.pepper": "Pepper",
 	"block.willsmod.ice_berry_bush": "Ice Berry",
 	"item.willsmod.ice_berry": "Ice Berry",
-	"itemGroup.willsmod_group": "Will's Mod"
+	"itemGroup.willsmod_group": "Will's Mod",
+	"effect.willsmod.more_health": "More Health Effect",
+	"item.willsmod.potion.more_health": "More Health Potion",
+	"item.willsmod.splash_potion.more_health": "More Health Splash Potion",
+	"item.willsmod.lingering_potion.more_health": "More Health Lingering Potion",
+	"item.willsmod.tipped_arrow.more_health": "Arrow of More Health"
 }

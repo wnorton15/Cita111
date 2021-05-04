@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.wnorton.willsmod.lists.BlockList;
 import com.wnorton.willsmod.lists.ItemList;
+import com.wnorton.willsmod.lists.PotionList;
 
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
@@ -31,7 +32,7 @@ public class Main {
 	}
 	
 	private void Setup(final FMLCommonSetupEvent event) {
-		
+		PotionList.addBrewingRecipes();
 	}
 	
 	private void ClientSetup(final FMLClientSetupEvent event) {
